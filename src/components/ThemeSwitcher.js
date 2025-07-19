@@ -1,21 +1,21 @@
-import React from 'react';
-import useTimers from '../hooks/useTimers';
+import React from "react";
+import { lightTheme } from "../styles/themes";
 
-function ThemeSwitcher() {
-  const [{ theme }, dispatch] = useTimers();
+export default function ThemeSwitcher({ theme, setThemeName }) {
   return (
-    <div className="theme-switcher">
-      <label>
-        Theme:&nbsp;
-        <select
-          value={theme}
-          onChange={e => dispatch({ type: 'SET_THEME', theme: e.target.value })}
-        >
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
-        </select>
-      </label>
-    </div>
+    <button
+      style={{
+        cursor: "pointer",
+        border: 0,
+        background: "transparent",
+        fontWeight: "bold",
+        color: theme.btn,
+        fontSize: 16,
+      }}
+      onClick={() => setThemeName((prev) => (prev === "light" ? "dark" : "light"))}
+      title="Switch theme"
+    >
+      {theme === lightTheme ? "🌙 Dark" : "☀️ Light"}
+    </button>
   );
 }
-export default ThemeSwitcher;

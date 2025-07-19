@@ -1,6 +1,79 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Multi-Timer App
+
+A fully functional React web timer app with category grouping, progress bars, history, **dark/light theme**, category filtering, **bulk actions**, **export/import (backup) support**, and more!
+
+---
+
+## 🚀 Features
+
+### Core Timer Features
+
+- **Add Timer**  
+  - Name, duration (seconds), category, and optional halfway (50%) alert.
+- **Timer List with Grouping**  
+  - Timers displayed in **expandable categories**, each showing name, time, and status.
+- **Timer Management**  
+  - Start, pause, reset, and completed marking. "Completed" status when timer hits zero.
+- **Progress Visualization**  
+  - Each timer shows a progress bar based on its completion percentage.
+- **Bulk Actions**
+  - **Start All / Pause All / Reset All** for all timers in a category.
+- **User Feedback**
+  - When a timer finishes, an on-screen modal pops up with a congratulatory message and timer name.
+
+### History & Logs
+
+- **Timer History**
+  - Log of completed timers with their names, categories, and completion timestamps.
+  - Accessible from the navigation bar.
+
+### Enhanced Functionality & Bonus Features
+
+- **Export/Import Timers**
+  - **Export** current timers and history to a JSON file for backup and restore.
+  - **Import** data from a backup JSON file into the app.
+- **Category Filtering**
+  - Dropdown to show only timers from the selected category.
+- **Customizable Themes**
+  - **Light/Dark mode** toggle. Theme applies to the entire app.
+- **Halfway Notification**
+  - Modal notification appears if "halfway alert" is enabled and timer hits 50%.
+- **Persistent Storage**
+  - All timers/history are saved in your browser's `localStorage`—refresh-proof unless local data is cleared.
+
+## ⭐ Extra Additions
+
+- **Single Page Navigation**
+  - No routing libraries are used; app navigation is handled by internal state (SPA mode).
+- **Responsive UI**
+  - Works well on both desktop and mobile browsers.
+- **No third-party timer packages**
+  - Timer logic is written in pure React using `setInterval` and state.
+
+---
+
+## ⚙️ Technical Details
+
+- **Framework**: React (functional components)
+- **State management**: `useReducer`
+- **Timers**:  
+  - Updates every second with `setInterval`
+  - Accurately tracks remaining time, triggers status changes, and handles halfway/completion alerts.
+- **Bulk actions**:  
+  - Implemented via reducer logic for fastest response.
+- **User Feedback**:  
+  - Congratulatory modals, halfway point modal.
+- **History**:  
+  - Stored as a chronological array (most recent first) in localStorage.
+- **Styling**:  
+  - Hand-coded CSS-in-JS for theme support.
+- **Theme engine**:  
+  - Theme is persisted; changing the theme applies to the entire page dynamically.
+
+---
+
+
 
 ## Available Scripts
 
@@ -26,45 +99,3 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
