@@ -3,6 +3,8 @@
 
 A fully functional React web timer app with category grouping, progress bars, history, **dark/light theme**, category filtering, **bulk actions**, **export/import (backup) support**, and more!
 
+Here is the Deployed link: https://healthflex-rho.vercel.app/
+
 ---
 
 ## 🚀 Features
