@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  margin: 0; font-family: sans-serif;
+}
+.navbar {
+  display: flex; gap: 12px; background: #ececec; padding: 8px 18px;
+}
+.add-btn {margin-left:auto;}
+.timers-container, .history-screen { max-width: 700px; margin: 30px auto; }
+.cat-group { border:1px solid #bbb; margin-bottom:12px; }
+.cat-header { background:#f6f6f6; cursor:pointer; padding:6px 13px; display:flex; justify-content:space-between; align-items:center;}
+.bulk {margin-left:6px;}
+.timer-item { background:#fafafa; padding:10px; border-bottom:1px solid #eee;}
+.timer-head { display:flex; justify-content:space-between; }
+.timer-status { font-size:0.9em; opacity:0.7; }
+.timer-time {margin:8px 0;}
+.progress-bar { background:#e0e0e0; height:8px; border-radius:5px;}
+.progress-inner { height:8px; background:#4caf50; border-radius:5px;}
+.timer-controls button { margin-right:4px;}
+.filter-section {margin-bottom:15px;}
+.modal-backdrop, .modal-alert {
+  position:fixed; top:0; left:0; width:100vw; height:100vh;
+  background:rgba(0,0,0,0.20);display:flex; align-items:center; justify-content:center;
+  z-index:20;
+}
+.modal {
+  background:#fff; padding:30px 24px; border-radius:7px; box-shadow:0 2px 15px 0 rgba(0,0,0,0.15); min-width:240px;
+}
+.empty-msg { opacity:0.6; text-align:center; margin:40px auto;}
